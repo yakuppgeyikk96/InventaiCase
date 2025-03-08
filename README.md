@@ -3,7 +3,7 @@
 #### 1. Clone Project
 
 ```bash
-git clone https://github.com/yakuppgeyikk96/inventai-case.git
+git clone https://github.com/yakuppgeyikk96/InventaiCase.git
 ```
 
 #### 2. Install dependencies
