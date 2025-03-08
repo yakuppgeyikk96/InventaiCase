@@ -1,0 +1,88 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  
+  .page-item {
+    margin: 0 0.25rem;
+    
+    &.active .page-link {
+      background-color: var(--bs-primary-bg-subtle);
+      color: var(--bs-primary);
+      font-weight: 600;
+      border-color: var(--bs-primary-border-subtle);
+      box-shadow: none;
+    }
+    
+    &.disabled .page-link {
+      color: var(--bs-secondary-color);
+      background-color: transparent;
+      border-color: var(--bs-border-color);
+      opacity: 0.65;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+  
+  .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border-radius: var(--bs-border-radius);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover:not(:disabled) {
+      background-color: var(--bs-tertiary-bg);
+      border-color: var(--bs-border-color);
+      z-index: 2;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+      z-index: 3;
+    }
+    
+    &:disabled {
+      color: var(--bs-secondary-color);
+      background-color: transparent;
+      border-color: var(--bs-border-color);
+      opacity: 0.65;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+  
+  // First, Previous, Next, Last butonları için özel stiller
+  .page-item:first-child .page-link,
+  .page-item:last-child .page-link {
+    font-weight: bold;
+    
+    &:disabled {
+      opacity: 0.65;
+    }
+  }
+  
+  // First ve Previous butonları
+  .page-item:first-child .page-link,
+  .page-item:nth-child(2) .page-link {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+  
+  // Next ve Last butonları
+  .page-item:last-child .page-link,
+  .page-item:nth-last-child(2) .page-link {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
